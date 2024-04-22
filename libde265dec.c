@@ -768,6 +768,6 @@ FFCodec ff_libde265_decoder = {
     FF_CODEC_DECODE_CB(ff_libde265dec_decode),
     .close          = ff_libde265dec_free,
     .flush          = ff_libde265dec_flush,
-    .p.capabilities = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_AUTO_THREADS | // AV_CODEC_CAP_DR1 | /// @todo
+    .p.capabilities = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS | // AV_CODEC_CAP_DR1 | /// @todo
                       AV_CODEC_CAP_SLICE_THREADS,
 };
