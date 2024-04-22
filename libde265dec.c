@@ -456,7 +456,7 @@ static int ff_libde265dec_decode(AVCodecContext *avctx,
         if (avpkt->pts != AV_NOPTS_VALUE) {
             pts = avpkt->pts;
         } else {
-            pts = avctx->reordered_opaque;
+            // pts = avctx->reordered_opaque;
         }
 
         if (ctx->packetized) {
@@ -679,7 +679,7 @@ static int ff_libde265dec_decode(AVCodecContext *avctx,
 
         *got_frame = 1;
 
-        picture->reordered_opaque = de265_get_image_PTS(img);
+        // picture->reordered_opaque = de265_get_image_PTS(img);
         picture->pts = de265_get_image_PTS(img);
     }
     return avpkt->size;
